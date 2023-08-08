@@ -3,7 +3,7 @@
 
   <test name="Run on Frirefox">
     <classes>
-      <class name="com.nopcommerce.user.User_01_Register_Login"/>
+      <class name="com.nopcommerce.user.Level_02_Apply_BasePage_III"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

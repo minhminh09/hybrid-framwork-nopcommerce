@@ -17,6 +17,10 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class BasePage<JavascriptExcutor> {
 
+	public static BasePage getBasePaseObject() {
+		return new BasePage();
+	}
+
 	public void getPageURL(WebDriver driver, String pageURL) {
 		driver.get(pageURL);
 
@@ -105,15 +109,15 @@ public class BasePage<JavascriptExcutor> {
 		}
 	}
 
-	public By getByXpath(String xpathLocator) {
+	private By getByXpath(String xpathLocator) {
 		return By.xpath(xpathLocator);
 	}
 
-	public WebElement getWebElement(WebDriver driver, String xpathLocator) {
+	private WebElement getWebElement(WebDriver driver, String xpathLocator) {
 		return driver.findElement(getByXpath(xpathLocator));
 	}
 
-	public List<WebElement> getListWebElement(WebDriver driver, String xpathLocator) {
+	private List<WebElement> getListWebElement(WebDriver driver, String xpathLocator) {
 		return driver.findElements(getByXpath(xpathLocator));
 	}
 
@@ -323,7 +327,7 @@ public class BasePage<JavascriptExcutor> {
 		explicitWait.until(ExpectedConditions.invisibilityOfAllElements(getListWebElement(driver, xpathLocator)));
 	}
 
-	public void waitForElementcLICK(WebDriver driver, String xpathLocator) {
+	public void waitForElementClick(WebDriver driver, String xpathLocator) {
 		WebDriverWait explicitWait = new WebDriverWait(driver, longTimeOut);
 		explicitWait.until(ExpectedConditions.elementToBeClickable(getByXpath(xpathLocator)));
 	}
