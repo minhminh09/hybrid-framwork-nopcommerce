@@ -2,8 +2,24 @@
 <suite  name="Nopcommerce">
 
   <test name="Run on Frirefox">
+  <parameter name= "browser" value="firefox"></parameter>
     <classes>
-      <class name="com.nopcommerce.user.Level_02_Apply_BasePage_III"/>
+      <class name="com.nopcommerce.user.Level_04_Multiple_Browser"/>
     </classes>
   </test> <!-- Test -->
+  
+   <test name="Run on Chrome">
+  <parameter name= "browser" value="chrome"></parameter>
+    <classes>
+      <class name="com.nopcommerce.user.Level_04_Multiple_Browser"/>
+    </classes>
+  </test> <!-- Test -->
+  
+   <test name="Run on Edge">
+  <parameter name= "browser" value="edge"></parameter>
+    <classes>
+      <class name="com.nopcommerce.user.Level_04_Multiple_Browser"/>
+    </classes>
+  </test> <!-- Test -->
+  
 </suite> <!-- Suite -->
