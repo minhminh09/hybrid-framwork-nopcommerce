@@ -78,15 +78,16 @@ public class RegisterPageObject extends BasePage {
 		return getElementText(driver, RegisterPageUI.REGISRER_SUSSCESFULL);
 	}
 
-	public void clickToLogoutLink() {
+	public HomePageObject clickToLogoutLink() {
 		waitForElementClick(driver, RegisterPageUI.LOGOUT_LINK);
 		clickToElement(driver, RegisterPageUI.LOGOUT_LINK);
+		return PageGeneratorManager.getHomePage(driver);
 
 	}
 
 	public String getErrorExistingEmailMessage() {
-		waitForElementVisible(driver, RegisterPageUI.EXITING_EMAIL_ERROR_MASSEGE);
-		return getElementText(driver, RegisterPageUI.EXITING_EMAIL_ERROR_MASSEGE);
+		waitForElementVisible(driver, RegisterPageUI.EXITING_EMAIL_ERROR_MESSAGE);
+		return getElementText(driver, RegisterPageUI.EXITING_EMAIL_ERROR_MESSAGE);
 	}
 
 	// public String getErrorMessageAtPassWord() {

@@ -50,19 +50,19 @@ public class Level_04_Multiple_Browser extends BaseTest {
 	@Test
 	public void TC_01_Register_Empty_Data() {
 
-		// System.out.println("Home Page - Step 01 - Click to Register Link");
-		// homePage.clickToRegisterLink();
-		// registerPage = new RegisterPageObject(driver);
-		//
-		// System.out.println("Register Page - Step 02 - Click button Register");
-		// registerPage.clickToRegisterButton();
-		//
-		// // System.out.println("Register page - Step 03- Verify message error");
-		// Assert.assertEquals(registerPage.getErrorMessageAtFirtNameTextBox(), "First name is required.");
-		// Assert.assertEquals(registerPage.getErrorMessageAtLastNameTextBox(), "Last name is required.");
-		// Assert.assertEquals(registerPage.getErrorMessageAtEmailTextBox(), "Email is required.");
-		// Assert.assertEquals(registerPage.getErrorMessageAtPassWordTextBox(), "Password is required.");
-		// Assert.assertEquals(registerPage.getErrorMessageAtConfirmPassWordTextBox(), "Password is required.");
+		System.out.println("Home Page - Step 01 - Click to Register Link");
+		homePage.clickToRegisterLink();
+		registerPage = new RegisterPageObject(driver);
+
+		System.out.println("Register Page - Step 02 - Click button Register");
+		registerPage.clickToRegisterButton();
+
+		System.out.println("Register page - Step 03- Verify message error");
+		Assert.assertEquals(registerPage.getErrorMessageAtFirtNameTextBox(), "First name is required.");
+		Assert.assertEquals(registerPage.getErrorMessageAtLastNameTextBox(), "Last name is required.");
+		Assert.assertEquals(registerPage.getErrorMessageAtEmailTextBox(), "Email is required.");
+		Assert.assertEquals(registerPage.getErrorMessageAtPassWordTextBox(), "Password is required.");
+		Assert.assertEquals(registerPage.getErrorMessageAtConfirmPassWordTextBox(), "Password is required.");
 
 	}
 
