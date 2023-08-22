@@ -1,8 +1,9 @@
-package PageObject;
+package PageObjectLiveGuru;
 
 import org.openqa.selenium.WebDriver;
 
 public class PageGeneratorManager {
+
 	public static HomePageObject getHomePage(WebDriver driver) {
 		return new HomePageObject(driver);
 	}
@@ -15,4 +16,7 @@ public class PageGeneratorManager {
 		return new RegisterPageObject(driver);
 	}
 
+	public static DashboardPageObject getDashboardPage(WebDriver driver) {
+		return new DashboardPageObject(driver);
+	}
 }

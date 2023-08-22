@@ -2,14 +2,18 @@ package com.nopcommerce.user;
 
 import org.testng.annotations.Test;
 
-import PageObject.HomePageObject;
-import PageObject.LoginPageObject;
-import PageObject.PageGeneratorManager;
-import PageObject.RegisterPageObject;
+import com.beust.jcommander.Parameter;
+
+import PageObjectLiveGuru.DashboardPageObject;
+import PageObject_NopCommerce_Portal.HomePageObject;
+import PageObject_NopCommerce_Portal.LoginPageObject;
+import PageObject_NopCommerce_Portal.PageGeneratorManager;
+import PageObject_NopCommerce_Portal.RegisterPageObject;
 import commons.BasePage;
 import commons.BaseTest;
 
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Parameters;
 
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
@@ -32,7 +36,9 @@ public class Level_06_Page_Generator_Manager_1 extends BaseTest {
 	private HomePageObject homePage;
 	private RegisterPageObject registerPage;
 	private LoginPageObject loginPage;
+	private DashboardPageObject dashboardPage;
 
+	@Parameters("browser")
 	@BeforeClass
 	public void beforeClass() {
 		System.setProperty("webdriver.gecko.driver", projectPath + "\\browserDrivers\\geckodriver.exe");
@@ -40,7 +46,7 @@ public class Level_06_Page_Generator_Manager_1 extends BaseTest {
 		driver.get("https://demo.nopcommerce.com/");
 		// 1
 		homePage = PageGeneratorManager.getHomePage(driver);
-		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		// driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 
 		firtName = "Automation";
 		lastName = "Testing";
@@ -68,7 +74,7 @@ public class Level_06_Page_Generator_Manager_1 extends BaseTest {
 		System.out.println("Pre-condition - Step 05 - Click to Logout Link");
 		homePage = registerPage.clickToLogoutLink();
 		// 10s
-		//homePage = new HomePageObject(driver);
+		// homePage = new HomePageObject(driver);
 	}
 
 	@Test

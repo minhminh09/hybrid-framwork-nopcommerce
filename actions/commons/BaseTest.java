@@ -20,7 +20,7 @@ public class BaseTest {
 	protected WebDriver getBrowserDriver(String browserName) {
 		System.out.println("Run on" + browserName);
 		if (browserName.equals("firefox")) {
-			WebDriverManager.firefoxdriver().setup();
+			driver = WebDriverManager.firefoxdriver().create();
 			driver = new FirefoxDriver();
 		} else if (browserName.equals("h_firefox")) {
 			WebDriverManager.firefoxdriver().setup();
@@ -29,7 +29,7 @@ public class BaseTest {
 			options.addArguments("windown-size=1920*1080");
 			driver = new FirefoxDriver(options);
 		} else if (browserName.equals("chrome")) {
-			WebDriverManager.chromedriver().setup();
+			driver = WebDriverManager.chromedriver().create();
 			driver = new ChromeDriver();
 		} else if (browserName.equals("h_firefox")) {
 			WebDriverManager.chromedriver().setup();
@@ -38,10 +38,10 @@ public class BaseTest {
 			options.addArguments("windown-size=1920*1080");
 			driver = new ChromeDriver(options);
 		} else if (browserName.equals("edge")) {
-			WebDriverManager.edgedriver().setup();
+			driver = WebDriverManager.edgedriver().create();
 			driver = new EdgeDriver();
 		} else if (browserName.equals("opera")) {
-			WebDriverManager.operadriver().setup();
+			driver = WebDriverManager.operadriver().create();
 			driver = new OperaDriver();
 		} else if (browserName.equals("coccoc")) {
 			// cốc cốc driver trừ đi 5-6 version thì ra chromedriver

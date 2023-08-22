@@ -1,10 +1,11 @@
-package PageObject;
+package PageObject_NopCommerce_Portal;
 
 import org.openqa.selenium.WebDriver;
 
 import commons.BasePage;
-import pageUIs.LoginPageUI;
-import pageUIs.RegisterPageUI;
+import pageUIs_NopCommerce.CusstomerInforPageUI;
+import pageUIs_NopCommerce.LoginPageUI;
+import pageUIs_NopCommerce.RegisterPageUI;
 
 public class LoginPageObject extends BasePage {
 	private WebDriver driver;
@@ -46,6 +47,13 @@ public class LoginPageObject extends BasePage {
 	public String getErrorMessageUncussesfull() {
 		waitForElementVisible(driver, LoginPageUI.PASSWORD_ERROR_MESSAGE);
 		return getElementText(driver, LoginPageUI.PASSWORD_ERROR_MESSAGE);
+	}
+
+	public CusstomerInforPageObject clickToMyAccoutLink() {
+		waitForElementClick(driver, LoginPageUI.MY_ACCOUNT_LINK);
+		clickToElement(driver, LoginPageUI.MY_ACCOUNT_LINK);
+		return PageGeneratorManager.getCusstomerInforPage(driver);
+
 	}
 
 }

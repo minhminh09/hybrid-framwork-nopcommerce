@@ -15,6 +15,13 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import PageObject_NopCommerce_Portal.AddressesPageObject;
+import PageObject_NopCommerce_Portal.MyProductReviewsPageObject;
+import PageObject_NopCommerce_Portal.PageGeneratorManager;
+import PageObject_NopCommerce_Portal.RewardPointsPageObject;
+import pageUIs_NopCommerce.BasePageUI;
+import pageUIs_NopCommerce.CusstomerInforPageUI;
+
 public class BasePage<JavascriptExcutor> {
 
 	public static BasePage getBasePaseObject() {
@@ -330,6 +337,24 @@ public class BasePage<JavascriptExcutor> {
 	public void waitForElementClick(WebDriver driver, String xpathLocator) {
 		WebDriverWait explicitWait = new WebDriverWait(driver, longTimeOut);
 		explicitWait.until(ExpectedConditions.elementToBeClickable(getByXpath(xpathLocator)));
+	}
+
+	public AddressesPageObject openAddressesPage(WebDriver driver) {
+		waitForElementVisible(driver, BasePageUI.ADDRESS_LINK);
+		clickToElement(driver, BasePageUI.ADDRESS_LINK);
+		return PageGeneratorManager.getAddressesPage(driver);
+	}
+
+	public MyProductReviewsPageObject openMyProducReviewPage(WebDriver driver) {
+		waitForElementVisible(driver, BasePageUI.MY_PRODUCT_REVIEW_LINK);
+		clickToElement(driver, BasePageUI.MY_PRODUCT_REVIEW_LINK);
+		return PageGeneratorManager.getMyProductReviewPage(driver);
+	}
+
+	public RewardPointsPageObject openRewardPointPage(WebDriver driver) {
+		waitForElementVisible(driver, BasePageUI.REWARD_POINT_LINK);
+		clickToElement(driver, BasePageUI.REWARD_POINT_LINK);
+		return PageGeneratorManager.getRewardPoitsPage(driver);
 	}
 
 	private long longTimeOut = 30;
