@@ -1,4 +1,4 @@
-package PageUI_LiveGuru;
+package pageUI_LiveGuru;
 
 public class HomePageUI {
 	public static final String MY_ACCOUT_LINK = "//div[@class='block-title']/following-sibling::ul//a [contains(text(), 'My Account')]";

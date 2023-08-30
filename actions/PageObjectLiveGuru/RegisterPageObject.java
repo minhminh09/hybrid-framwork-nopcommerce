@@ -2,8 +2,8 @@ package PageObjectLiveGuru;
 
 import org.openqa.selenium.WebDriver;
 
-import PageUI_LiveGuru.RegisterPageUI;
 import commons.BasePage;
+import pageUI_LiveGuru.RegisterPageUI;
 
 public class RegisterPageObject extends BasePage {
 	private WebDriver driver;

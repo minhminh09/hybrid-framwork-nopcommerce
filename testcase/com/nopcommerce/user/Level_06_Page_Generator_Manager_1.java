@@ -5,12 +5,12 @@ import org.testng.annotations.Test;
 import com.beust.jcommander.Parameter;
 
 import PageObjectLiveGuru.DashboardPageObject;
-import PageObject_NopCommerce_Portal.HomePageObject;
-import PageObject_NopCommerce_Portal.LoginPageObject;
-import PageObject_NopCommerce_Portal.PageGeneratorManager;
-import PageObject_NopCommerce_Portal.RegisterPageObject;
+import PageObject_NopCommerce_User.User_HomePageObject;
+import PageObject_NopCommerce_User.User_LoginPageObject;
+import PageObject_NopCommerce_User.User_RegisterPageObject;
 import commons.BasePage;
 import commons.BaseTest;
+import commons.PageGeneratorManager;
 
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
@@ -33,9 +33,9 @@ public class Level_06_Page_Generator_Manager_1 extends BaseTest {
 	private String projectPath = System.getProperty("user.dir");
 	String osName = System.getProperty("os.name");
 	WebDriverWait explicitWait;
-	private HomePageObject homePage;
-	private RegisterPageObject registerPage;
-	private LoginPageObject loginPage;
+	private User_HomePageObject homePage;
+	private User_RegisterPageObject registerPage;
+	private User_LoginPageObject loginPage;
 	private DashboardPageObject dashboardPage;
 
 	@Parameters("browser")
@@ -45,7 +45,7 @@ public class Level_06_Page_Generator_Manager_1 extends BaseTest {
 		driver = new FirefoxDriver();
 		driver.get("https://demo.nopcommerce.com/");
 		// 1
-		homePage = PageGeneratorManager.getHomePage(driver);
+		homePage = PageGeneratorManager.getUserHomePage(driver);
 		// driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 
 		firtName = "Automation";

@@ -2,9 +2,9 @@ package PageObjectLiveGuru;
 
 import org.openqa.selenium.WebDriver;
 
-import PageUI_LiveGuru.DashboardPageUI;
 import commons.BasePage;
-import pageUIs_NopCommerce.LoginPageUI;
+import pageUI_LiveGuru.DashboardPageUI;
+import pageUIs_NopCommerce_User.User_LoginPageUI;
 
 public class DashboardPageObject extends BasePage {
 	private WebDriver driver;

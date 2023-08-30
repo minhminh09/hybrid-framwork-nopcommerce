@@ -1,4 +1,4 @@
-package PageUI_LiveGuru;
+package pageUI_LiveGuru;
 
 public class LoginPageUI {
 	public static final String EMAIL_ADDRESS_TEXTBOX = "//input[@id='email']";

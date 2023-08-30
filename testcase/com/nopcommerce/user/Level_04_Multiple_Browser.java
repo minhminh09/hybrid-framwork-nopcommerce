@@ -2,8 +2,8 @@ package com.nopcommerce.user;
 
 import org.testng.annotations.Test;
 
-import PageObject_NopCommerce_Portal.HomePageObject;
-import PageObject_NopCommerce_Portal.RegisterPageObject;
+import PageObject_NopCommerce_User.User_HomePageObject;
+import PageObject_NopCommerce_User.User_RegisterPageObject;
 import commons.BasePage;
 import commons.BaseTest;
 
@@ -32,15 +32,15 @@ public class Level_04_Multiple_Browser extends BaseTest {
 
 	String osName = System.getProperty("os.name");
 	WebDriverWait explicitWait;
-	private HomePageObject homePage;
-	private RegisterPageObject registerPage;
+	private User_HomePageObject homePage;
+	private User_RegisterPageObject registerPage;
 
 	@Parameters("browser")
 	@BeforeClass
 	public void beforeClass(String browserName) {
 		driver = getBrowserDriver(browserName);
 
-		homePage = new HomePageObject(driver);
+		homePage = new User_HomePageObject(driver);
 		firtName = "Automation";
 		lastName = "Testing";
 		emailAddress = "auto" + generateFakeNumber() + "@gmail.com";
@@ -52,7 +52,7 @@ public class Level_04_Multiple_Browser extends BaseTest {
 
 		System.out.println("Home Page - Step 01 - Click to Register Link");
 		homePage.clickToRegisterLink();
-		registerPage = new RegisterPageObject(driver);
+		registerPage = new User_RegisterPageObject(driver);
 
 		System.out.println("Register Page - Step 02 - Click button Register");
 		registerPage.clickToRegisterButton();

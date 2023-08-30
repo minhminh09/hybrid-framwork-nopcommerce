@@ -1,4 +1,4 @@
-package PageUI_LiveGuru;
+package pageUI_LiveGuru;
 
 public class RegisterPageUI {
 	public static final String FIRST_NAME_TEXTBOX = "//input[@id='firstname']";

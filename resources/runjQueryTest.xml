@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite  name="jQuery">
+
+<parameter name="url" value="https://www.jqueryscript.net/demo/jQuery-Dynamic-Data-Grid-Plugin-appendGrid/" />
+    
+  <test name="Run on FRIFOX">
+  <parameter name= "browser" value="firefox"></parameter>
+    <classes>
+      <class name="com.jquery.datatable.Level_10_Datatable_DataGrid"/>
+    </classes>
+  </test> 
+   
+  </suite> <!-- Suite -->
