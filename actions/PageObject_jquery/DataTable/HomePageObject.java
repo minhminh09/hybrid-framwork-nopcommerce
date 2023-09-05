@@ -1,4 +1,4 @@
-package PageObject_jquery;
+package PageObject_jquery.DataTable;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -9,7 +9,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.server.handler.interactions.SendKeyToActiveElement;
 
 import commons.BasePage;
-import pageUI_jQuery.HomePageUI;
+import pageUI_jQuery.DataTable.HomePageUI;
 
 public class HomePageObject<WebElement> extends BasePage {
 	private WebDriver driver;

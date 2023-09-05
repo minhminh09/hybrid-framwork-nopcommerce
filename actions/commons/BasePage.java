@@ -24,6 +24,8 @@ import PageObject_NopCommerce_User.User_MyProductReviewsPageObject;
 import PageObject_NopCommerce_User.User_RegisterPageObject;
 import PageObject_NopCommerce_User.User_RewardPointsPageObject;
 import PageObject_Nopcommerce_Admin.AdminLoginPageObject;
+import pageUI_jquery_UploadFile.BasePageJqueryUI;
+import pageUI_jquery_UploadFile.HomePageUI;
 import pageUIs_NopCommerce_User.BasePageUI;
 import pageUIs_NopCommerce_User.User_CusstomerInforPageUI;
 
@@ -416,6 +418,17 @@ public class BasePage<JavascriptExcutor> {
 		}
 	}
 
+	public boolean isImageLoaded(WebDriver driver, String locatorType, String... dynamicValues) {
+		JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
+		boolean status = (boolean) jsExecutor.executeScript("return arguments[0].complete && typeof arguments[0].naturalWidth != \"undefined\" && arguments[0].naturalWidth > 0",
+				getWebElement(driver, getDynamicXpath(locatorType, dynamicValues)));
+		if (status) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+
 	public void waitForElementVisible(WebDriver driver, String locatorType) {
 		WebDriverWait explicitWait = new WebDriverWait(driver, longTimeOut);
 		explicitWait.until(ExpectedConditions.visibilityOfElementLocated(getByLocator(locatorType)));
@@ -464,6 +477,17 @@ public class BasePage<JavascriptExcutor> {
 	public void waitForElementClick(WebDriver driver, String locatorType, String... dynamicValues) {
 		WebDriverWait explicitWait = new WebDriverWait(driver, longTimeOut);
 		explicitWait.until(ExpectedConditions.elementToBeClickable(getByLocator(getDynamicXpath(locatorType, dynamicValues))));
+	}
+
+	public void uploadfileMultipleFile(WebDriver driver, String... fileNames) {
+		// Đường dẫn của thư mục upload file
+		String filepath = GlobalConstants.UPLOAD_FILE;
+		String fullFileName = "";
+		for (String file : fileNames) {
+			fullFileName = fullFileName + filepath + file + "\n";
+		}
+		fullFileName = fullFileName.trim();
+		getWebElement(driver, BasePageJqueryUI.UPLOAD_FILE).sendKeys(fullFileName);
 	}
 
 	// tối ưu ở bài học Level_07_switch page

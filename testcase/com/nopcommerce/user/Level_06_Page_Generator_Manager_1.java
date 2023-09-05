@@ -74,7 +74,7 @@ public class Level_06_Page_Generator_Manager_1 extends BaseTest {
 		System.out.println("Pre-condition - Step 05 - Click to Logout Link");
 		homePage = registerPage.clickToLogoutLink();
 		// 10s
-		// homePage = new HomePageObject(driver);
+		// homePage = new HomePageJqueryObject(driver);
 	}
 
 	@Test
@@ -148,7 +148,7 @@ public class Level_06_Page_Generator_Manager_1 extends BaseTest {
 
 		homePage = loginPage.clickToLogInButton();
 		// 9
-		// homePage = new HomePageObject(driver);
+		// homePage = new HomePageJqueryObject(driver);
 		Assert.assertEquals(homePage.getMessageCussfull(), "Welcome to our store");
 	}
 

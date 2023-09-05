@@ -2,7 +2,7 @@ package com.jquery.datatable;
 
 import org.testng.annotations.Test;
 
-import PageObject_jquery.HomePageObject;
+import PageObject_jquery.DataTable.HomePageObject;
 import commons.BasePage;
 import commons.BaseTest;
 import commons.PageGeneratorManager;
@@ -26,7 +26,7 @@ public class Level_10_Datatable_DataGrid extends BaseTest {
 	public void beforeClass(String browserName, String appUrl) {
 
 		driver = getBrowserDriver(browserName, appUrl);
-		homePage = PageObject_jquery.PageGeneratorManager.getHomePage(driver);
+		homePage = PageObject_jquery.DataTable.PageGeneratorManager.getHomePage(driver);
 	}
 
 	public void TC_01_Paging() {
