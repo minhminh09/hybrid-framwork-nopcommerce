@@ -3,12 +3,14 @@
 
 <Listeners>
 <Listener class-name="commons.MethodListener"> </Listener>
+
+
 </Listeners>
-    
+    <parameter name="enviroment" value="DEV"/>	
   <test name="Run on FRIFOX">
   <parameter name= "browser" value="firefox"></parameter>
     <classes>
-      <class name="com.nopcommerce.user.Level_10_Assert_Verify"/>
+      <class name="com.nopcommerce.user.Level_11_Log_ReportNG"/>
     </classes>
   </test> 
    

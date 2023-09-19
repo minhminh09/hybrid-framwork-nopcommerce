@@ -38,4 +38,16 @@ public class LoginPageObject extends BasePage {
 		clickToElement(driver, pageUI_Facebook.CLOSE_ICON_POPUP);
 
 	}
+
+	public boolean isConfirmEmailTextboxUnDisplay() {
+		// waitForElementUnDisplayed(driver, pageUI_Facebook.CONFIRM_EMAIL_ADDRESS_TEXTBOX);
+		return isElementUndisplayed(driver, pageUI_Facebook.CONFIRM_EMAIL_ADDRESS_TEXTBOX);
+	}
+
+	public void clickCloseIconRegisterForm() {
+		waitForElementVisible(driver, pageUI_Facebook.CLOSE_ICON_POPUP);
+		clickToElement(driver, pageUI_Facebook.CLOSE_ICON_POPUP);
+
+	}
+
 }

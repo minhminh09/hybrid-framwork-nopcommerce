@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
-	<classpathentry kind="src" path="javaTester"/>
 	<classpathentry kind="src" path="testcase"/>
 	<classpathentry kind="src" path="testdata"/>
 	<classpathentry kind="src" path="actions"/>
@@ -32,9 +31,18 @@
 	<classpathentry kind="lib" path="librariesWebDriverManager/jackson-annotations-2.10.3.jar"/>
 	<classpathentry kind="lib" path="librariesWebDriverManager/jackson-core-2.10.3.jar"/>
 	<classpathentry kind="lib" path="librariesWebDriverManager/jackson-databind-2.10.3.jar"/>
-	<classpathentry kind="lib" path="librariesWebDriverManager/jcl-over-slf4j-1.7.30.jar"/>
 	<classpathentry kind="lib" path="librariesWebDriverManager/jna-5.12.1.jar"/>
 	<classpathentry kind="lib" path="librariesWebDriverManager/slf4j-api-2.0.7.jar"/>
 	<classpathentry kind="lib" path="librariesWebDriverManager/webdrivermanager-5.4.0.jar"/>
+	<classpathentry kind="lib" path="libLog4J/commons-codec-1.11.jar"/>
+	<classpathentry kind="lib" path="libLog4J/commons-logging-1.2.jar"/>
+	<classpathentry kind="lib" path="libLog4J/log4j-1.2.16.jar"/>
+	<classpathentry kind="lib" path="libLog4J/log4j-api-2.19.0.jar"/>
+	<classpathentry kind="lib" path="libLog4J/log4j-core-2.19.0.jar"/>
+	<classpathentry kind="lib" path="libReportNG/commons-collections-3.2.1.jar"/>
+	<classpathentry kind="lib" path="libReportNG/guice-3.0.jar"/>
+	<classpathentry kind="lib" path="libReportNG/reportng-1.1.4.jar"/>
+	<classpathentry kind="lib" path="libReportNG/reportng-1.1.4-sources.jar"/>
+	<classpathentry kind="lib" path="libReportNG/velocity-1.4.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
