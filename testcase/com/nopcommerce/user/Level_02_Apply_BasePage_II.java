@@ -1,21 +1,17 @@
 package com.nopcommerce.user;
 
-import org.testng.annotations.Test;
-
-import commons.BasePage;
-
-import org.testng.annotations.BeforeClass;
-
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.By.ByCssSelector;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Test;
+
+import commons.BasePage;
 
 public class Level_02_Apply_BasePage_II {
 	WebDriver driver;

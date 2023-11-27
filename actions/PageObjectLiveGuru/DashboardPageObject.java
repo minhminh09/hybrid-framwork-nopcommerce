@@ -4,7 +4,6 @@ import org.openqa.selenium.WebDriver;
 
 import commons.BasePage;
 import pageUI_LiveGuru.DashboardPageUI;
-import pageUIs_NopCommerce_User.User_LoginPageUI;
 
 public class DashboardPageObject extends BasePage {
 	private WebDriver driver;

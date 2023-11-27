@@ -1,12 +1,10 @@
 package PageObject_jquery.DataTable;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.remote.server.handler.interactions.SendKeyToActiveElement;
 
 import commons.BasePage;
 import pageUI_jQuery.DataTable.HomePageUI;
@@ -32,6 +30,7 @@ public class HomePageObject<WebElement> extends BasePage {
 
 	}
 
+	@Override
 	public void refreshCurrentPage(WebDriver driver2) {
 		// TODO Auto-generated method stub
 
@@ -46,7 +45,7 @@ public class HomePageObject<WebElement> extends BasePage {
 		int totalPage = getElementSize(driver, HomePageUI.TOTAL_PAGINATION);
 		System.out.println("Total size=" + totalPage);
 
-		List<String> allRowValueAllPage = new ArrayList<String>();
+		List<String> allRowValueAllPage = new ArrayList<>();
 
 		// Duyệt qua tất cả các page number (paging)
 		for (int index = 1; index <= totalPage; index++) {

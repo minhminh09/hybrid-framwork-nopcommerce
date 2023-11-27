@@ -1,17 +1,14 @@
 package com.facebook.register;
 
+import org.openqa.selenium.WebDriver;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import PageObject_Facebook.LoginPageObject;
 import PageObject_Facebook.PageGeneratorManager;
 import commons.BaseTest;
-
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.Parameters;
-
-import org.openqa.selenium.WebDriver;
-import org.testng.Assert;
-import org.testng.annotations.AfterClass;
 
 public class Level_12_Element_Undisplay extends BaseTest {
 	private LoginPageObject loginPage;

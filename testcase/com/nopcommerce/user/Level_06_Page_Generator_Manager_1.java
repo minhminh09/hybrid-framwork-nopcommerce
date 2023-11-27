@@ -1,30 +1,20 @@
 package com.nopcommerce.user;
 
-import org.testng.annotations.Test;
-
-import com.beust.jcommander.Parameter;
-
-import PageObjectLiveGuru.DashboardPageObject;
-import PageObject_NopCommerce_User.User_HomePageObject;
-import PageObject_NopCommerce_User.User_LoginPageObject;
-import PageObject_NopCommerce_User.User_RegisterPageObject;
-import commons.BasePage;
-import commons.BaseTest;
-import commons.PageGeneratorManager;
-
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.Parameters;
-
-import java.util.Random;
-import java.util.concurrent.TimeUnit;
-
-import org.openqa.selenium.By;
-import org.openqa.selenium.By.ByCssSelector;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Parameters;
+import org.testng.annotations.Test;
+
+import PageObjectLiveGuru.DashboardPageObject;
+import PageObject_NopCommerce_User.User_HomePageObject;
+import PageObject_NopCommerce_User.User_LoginPageObject;
+import PageObject_NopCommerce_User.User_RegisterPageObject;
+import commons.BaseTest;
+import commons.PageGeneratorManager;
 
 public class Level_06_Page_Generator_Manager_1 extends BaseTest {
 	private WebDriver driver;

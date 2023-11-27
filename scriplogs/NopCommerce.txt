@@ -1,16 +1,16 @@
-[2023-09-19 16:09:57,951 INFO com.nopcommerce.user.Level_11_Log_ReportNG] - Register - Step 01: Navigate to 'Register' page
-[2023-09-19 16:09:58,934 INFO com.nopcommerce.user.Level_11_Log_ReportNG] - Register - Step 02: Enter to firtname textbox with value is ' Automation' 
-[2023-09-19 16:09:58,983 INFO com.nopcommerce.user.Level_11_Log_ReportNG] - Register - Step 03: Enter to lastName textbox with value is ' Testing' 
-[2023-09-19 16:09:59,019 INFO com.nopcommerce.user.Level_11_Log_ReportNG] - Register - Step 04: Enter to emailAddress textbox with value is ' auto4779@gmail.com' 
-[2023-09-19 16:09:59,054 INFO com.nopcommerce.user.Level_11_Log_ReportNG] - Register - Step 05: Enter to password textbox with value is ' 123456' 
-[2023-09-19 16:09:59,086 INFO com.nopcommerce.user.Level_11_Log_ReportNG] - Register - Step 06: Enter to confirm password textbox with value is ' 123456' 
-[2023-09-19 16:09:59,119 INFO com.nopcommerce.user.Level_11_Log_ReportNG] - Register - Step 07: Click to register button
-[2023-09-19 16:09:59,801 INFO com.nopcommerce.user.Level_11_Log_ReportNG] - Register - Step 08: Verify message Sussesfull isDisplay
-[2023-09-19 16:09:59,833 INFO com.nopcommerce.user.Level_11_Log_ReportNG] - HomePagr - Step 09: Click to Logout Link
-[2023-09-19 16:10:00,167 INFO com.nopcommerce.user.Level_11_Log_ReportNG] - Login page - Step 01: Click to Login Link
-[2023-09-19 16:10:00,517 INFO com.nopcommerce.user.Level_11_Log_ReportNG] - Register - Step 02: Enter to firtname textbox with value is ' Automation' 
-[2023-09-19 16:10:00,564 INFO com.nopcommerce.user.Level_11_Log_ReportNG] - Register - Step 03: Enter to password textbox with value is ' 123456' 
-[2023-09-19 16:10:00,597 INFO com.nopcommerce.user.Level_11_Log_ReportNG] - Login page - Step 04: Click to Login Button
-[2023-09-19 16:10:01,240 INFO com.nopcommerce.user.Level_11_Log_ReportNG] - Login page - Step 05: Verify My Accout Link Display
-[2023-09-19 16:10:01,275 INFO com.nopcommerce.user.Level_11_Log_ReportNG] - Login page - Step 06: Click to My Accout Link
-[2023-09-19 16:10:02,176 INFO com.nopcommerce.user.Level_11_Log_ReportNG] - Login page - Step 07: Verify My Account Page Display
+[2023-09-21 17:08:23,065 INFO com.nopcommerce.user.Level_12_ReportNG_Screenshot] - Register - Step 01: Navigate to 'Register' page
+[2023-09-21 17:08:24,071 INFO com.nopcommerce.user.Level_12_ReportNG_Screenshot] - Register - Step 02: Enter to firtname textbox with value is ' Automation' 
+[2023-09-21 17:08:24,114 INFO com.nopcommerce.user.Level_12_ReportNG_Screenshot] - Register - Step 03: Enter to lastName textbox with value is ' Testing' 
+[2023-09-21 17:08:24,152 INFO com.nopcommerce.user.Level_12_ReportNG_Screenshot] - Register - Step 04: Enter to emailAddress textbox with value is ' auto223@gmail.com' 
+[2023-09-21 17:08:24,184 INFO com.nopcommerce.user.Level_12_ReportNG_Screenshot] - Register - Step 05: Enter to password textbox with value is ' 123456' 
+[2023-09-21 17:08:24,215 INFO com.nopcommerce.user.Level_12_ReportNG_Screenshot] - Register - Step 06: Enter to confirm password textbox with value is ' 123456' 
+[2023-09-21 17:08:24,247 INFO com.nopcommerce.user.Level_12_ReportNG_Screenshot] - Register - Step 07: Click to register button
+[2023-09-21 17:08:25,454 INFO com.nopcommerce.user.Level_12_ReportNG_Screenshot] - Register - Step 08: Verify message Sussesfull isDisplay
+[2023-09-21 17:08:25,489 INFO com.nopcommerce.user.Level_12_ReportNG_Screenshot] - HomePagr - Step 09: Click to Logout Link
+[2023-09-21 17:08:25,846 INFO com.nopcommerce.user.Level_12_ReportNG_Screenshot] - Login page - Step 01: Click to Login Link
+[2023-09-21 17:08:26,178 INFO com.nopcommerce.user.Level_12_ReportNG_Screenshot] - Register - Step 02: Enter to firtname textbox with value is ' Automation' 
+[2023-09-21 17:08:26,218 INFO com.nopcommerce.user.Level_12_ReportNG_Screenshot] - Register - Step 03: Enter to password textbox with value is ' 123456' 
+[2023-09-21 17:08:26,253 INFO com.nopcommerce.user.Level_12_ReportNG_Screenshot] - Login page - Step 04: Click to Login Button
+[2023-09-21 17:08:26,892 INFO com.nopcommerce.user.Level_12_ReportNG_Screenshot] - Login page - Step 05: Verify My Accout Link Display
+[2023-09-21 17:08:26,934 INFO com.nopcommerce.user.Level_12_ReportNG_Screenshot] - Login page - Step 06: Click to My Accout Link
+[2023-09-21 17:08:27,267 INFO com.nopcommerce.user.Level_12_ReportNG_Screenshot] - Login page - Step 07: Verify My Account Page Display

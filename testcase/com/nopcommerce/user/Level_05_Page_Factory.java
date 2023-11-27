@@ -1,25 +1,19 @@
 package com.nopcommerce.user;
 
+import java.util.Random;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import PageFactory_NopCommerce.HomePageObject;
 import PageFactory_NopCommerce.LoginPageObject;
 import PageFactory_NopCommerce.RegisterPageObject;
 import commons.BaseTest;
-
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.Parameters;
-
-import java.util.Random;
-import java.util.concurrent.TimeUnit;
-
-import org.openqa.selenium.By;
-import org.openqa.selenium.By.ByCssSelector;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.Assert;
-import org.testng.annotations.AfterClass;
 
 public class Level_05_Page_Factory extends BaseTest {
 	private WebDriver driver;
@@ -138,6 +132,7 @@ public class Level_05_Page_Factory extends BaseTest {
 		Assert.assertEquals(homePage.getMessageCussfull(), "Welcome to our store");
 	}
 
+	@Override
 	public int generateFakeNumber() {
 		Random rand = new Random();
 		return rand.nextInt(9999);

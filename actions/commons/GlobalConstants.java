@@ -15,10 +15,12 @@ public class GlobalConstants {
 	public static final String BROWSER_LOG = PROJECT_PATH + File.separator + "browserLog";
 	public static final String DRAP_DROP_HTML5 = PROJECT_PATH + File.separator + "drapDropHTML5";
 	public static final String AUTO_IT_SCRIPT = PROJECT_PATH + File.separator + "autoIT";
+	public static final String REPORTING_SCREENSHOT = PROJECT_PATH + File.separator + "ReportNGScreenShots" + File.separator;
+
 	public static final String DB_DEV_URL = "32.18.252.185:9860";
 	public static final String DB_DEV_USER = "autotesting";
 	public static final String DB_DEV_PASS = "123456";
 	public static final long SHORT_TIMEOUT = 5;
 	public static final long LONG_TIMEOUT = 30;
-	public static long RETRY_TEST_FAIL = 3;
+	public static final long RETRY_TEST_FAIL = 3;
 }

@@ -1,22 +1,15 @@
 package com.jquery.datatable;
 
-import org.testng.annotations.Test;
-
-import PageObject_jquery.DataTable.HomePageObject;
-import PageObject_jquery.UploadFile.HomePageJqueryObject;
-import PageObject_jquery.UploadFile.PageJqueryGeneratorManager;
-import commons.BasePage;
-import commons.BaseTest;
-import commons.PageGeneratorManager;
-
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.Parameters;
-
-import java.util.List;
-
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Parameters;
+import org.testng.annotations.Test;
+
+import PageObject_jquery.UploadFile.HomePageJqueryObject;
+import PageObject_jquery.UploadFile.PageJqueryGeneratorManager;
+import commons.BaseTest;
 
 public class Level_11_UploadFile extends BaseTest {
 	private HomePageJqueryObject homePage;

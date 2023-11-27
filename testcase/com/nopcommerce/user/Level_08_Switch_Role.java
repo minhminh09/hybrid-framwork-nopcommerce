@@ -1,8 +1,13 @@
 package com.nopcommerce.user;
 
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
-import PageObjectLiveGuru.DashboardPageObject;
 import PageObject_NopCommerce_User.User_AddressesPageObject;
 import PageObject_NopCommerce_User.User_CusstomerInforPageObject;
 import PageObject_NopCommerce_User.User_HomePageObject;
@@ -12,24 +17,9 @@ import PageObject_NopCommerce_User.User_RegisterPageObject;
 import PageObject_NopCommerce_User.User_RewardPointsPageObject;
 import PageObject_Nopcommerce_Admin.AdminDashboardPageObject;
 import PageObject_Nopcommerce_Admin.AdminLoginPageObject;
-import commons.BasePage;
 import commons.BaseTest;
 import commons.GlobalConstants;
 import commons.PageGeneratorManager;
-
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.Parameters;
-
-import java.util.Random;
-import java.util.concurrent.TimeUnit;
-
-import org.openqa.selenium.By;
-import org.openqa.selenium.By.ByCssSelector;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.Assert;
-import org.testng.annotations.AfterClass;
 
 public class Level_08_Switch_Role extends BaseTest {
 

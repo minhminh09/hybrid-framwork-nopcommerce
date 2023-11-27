@@ -1,12 +1,12 @@
 package commons;
 
-import java.util.Date;
 import java.util.List;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Cookie;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -18,7 +18,6 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import PageObjectLiveGuru.LoginPageObject;
 import PageObject_NopCommerce_User.User_AddressesPageObject;
 import PageObject_NopCommerce_User.User_HomePageObject;
 import PageObject_NopCommerce_User.User_LoginPageObject;
@@ -27,10 +26,13 @@ import PageObject_NopCommerce_User.User_RegisterPageObject;
 import PageObject_NopCommerce_User.User_RewardPointsPageObject;
 import PageObject_Nopcommerce_Admin.AdminLoginPageObject;
 import pageUI_jquery_UploadFile.BasePageJqueryUI;
-import pageUI_jquery_UploadFile.HomePageUI;
 import pageUIs_NopCommerce_User.BasePageUI;
-import pageUIs_NopCommerce_User.User_CusstomerInforPageUI;
 
+/**
+ * @author HLC_2021
+ *
+ * @param <JavascriptExcutor>
+ */
 public class BasePage<JavascriptExcutor> {
 
 	public static BasePage getBasePaseObject() {
@@ -62,11 +64,24 @@ public class BasePage<JavascriptExcutor> {
 
 	public void forwardToPage(WebDriver driver) {
 		driver.navigate().forward();
-		;
+
 	}
 
 	public void refreshCurrentPage(WebDriver driver) {
 		driver.navigate().refresh();
+	}
+
+	// Set cookie
+	public Set<Cookie> getAllCookies(WebDriver driver) {
+		return driver.manage().getCookies();
+	}
+
+	public void setcookie(WebDriver driver, Set<Cookie> cookies) {
+		for (Cookie cookie : cookies) {
+			driver.manage().addCookie(cookie);
+		}
+		sleepInsecon(3);
+
 	}
 
 	public Alert waitForAlertPresence(WebDriver driver) {
@@ -131,7 +146,7 @@ public class BasePage<JavascriptExcutor> {
 
 	public By getByLocator(String locatorType) {
 		By by = null;
-		System.out.println("Locator type=" + locatorType);
+		// System.out.println("Locator type=" + locatorType);
 		if (locatorType.startsWith("id=") || locatorType.startsWith("Id=") || locatorType.startsWith("ID=")) {
 			by = By.id(locatorType.substring(3));
 		} else if (locatorType.startsWith("class=") || locatorType.startsWith("Class=") || locatorType.startsWith("CLASS=")) {
@@ -149,12 +164,12 @@ public class BasePage<JavascriptExcutor> {
 	}
 
 	public String getDynamicXpath(String locatorType, String... value) {
-		System.out.println("Locator type Before=" + locatorType);
+		// System.out.println("Locator type Before=" + locatorType);
 		if (locatorType.startsWith("xpath=") || locatorType.startsWith("Xpath=") || locatorType.startsWith("XPath=") || locatorType.startsWith("XPATH=")) {
 			locatorType = String.format(locatorType, (Object[]) value);
 		}
-		System.out.println("Value map to locator=" + value.toString());
-		System.out.println("Locator type After=" + locatorType);
+		// System.out.println("Value map to locator=" + value.toString());
+		// System.out.println("Locator type After=" + locatorType);
 		return locatorType;
 	}
 
@@ -306,21 +321,21 @@ public class BasePage<JavascriptExcutor> {
 	}
 
 	public boolean isElementUndisplayed(WebDriver driver, String locator) {
-		System.out.println("Start time: " + new Date().toString());
+		// System.out.println("Start time: " + new Date().toString());
 		overrideImplicitTimeout(driver, shortTimeOut);
 		List<WebElement> elements = getListWebElement(driver, locator);
 		// Neu nhu gan=5 apply cho tat ca cac step ve sau do: findElement/findElements
 		overrideImplicitTimeout(driver, longTimeOut);
 		if (elements.size() == 0) {
-			System.out.println("Case 3: Element khong co trong DOM");
-			System.out.println("End time: " + new Date().toString());
+			// System.out.println("Case 3: Element khong co trong DOM");
+			// System.out.println("End time: " + new Date().toString());
 			return true;
 		} else if (elements.size() > 0 && !elements.get(0).isDisplayed()) {
-			System.out.println("Case 2: Element co trong DOM nhung khong visible/displayed");
-			System.out.println("End time: " + new Date().toString());
+			// System.out.println("Case 2: Element co trong DOM nhung khong visible/displayed");
+			// System.out.println("End time: " + new Date().toString());
 			return true;
 		} else {
-			System.out.println("Element in DOM and visible");
+			// System.out.println("Element in DOM and visible");
 			return false;
 		}
 	}
@@ -408,7 +423,7 @@ public class BasePage<JavascriptExcutor> {
 		WebDriverWait explicitWait = new WebDriverWait(driver, longTimeOut);
 		JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
 
-		ExpectedCondition<Boolean> jQueryLoad = new ExpectedCondition<Boolean>() {
+		ExpectedCondition<Boolean> jQueryLoad = new ExpectedCondition<>() {
 			@Override
 			public Boolean apply(WebDriver driver) {
 				try {
@@ -419,7 +434,7 @@ public class BasePage<JavascriptExcutor> {
 			}
 		};
 
-		ExpectedCondition<Boolean> jsLoad = new ExpectedCondition<Boolean>() {
+		ExpectedCondition<Boolean> jsLoad = new ExpectedCondition<>() {
 			@Override
 			public Boolean apply(WebDriver driver) {
 				return jsExecutor.executeScript("return document.readyState").toString().equals("complete");
@@ -578,6 +593,84 @@ public class BasePage<JavascriptExcutor> {
 	public void openPageAtMyAcountBypageName(WebDriver driver, String pageName) {
 		waitForElementClick(driver, BasePageUI.DYNAMIC_PAGES_AT_MY_ACCOUNT_AREA, pageName);
 		clickToElement(driver, BasePageUI.DYNAMIC_PAGES_AT_MY_ACCOUNT_AREA, pageName);
+	}
+
+	/**
+	 * Enter to Dynamin textbox by id
+	 * 
+	 * @author HaPTT
+	 * @param driver
+	 * @param textboxID
+	 * @param value
+	 */
+	public void inputToTextboxById(WebDriver driver, String textboxID, String value) {
+		waitForAllElementVisible(driver, BasePageUI.DYNAMIC_TEXTBOX_BY_ID, textboxID);
+		senkeyToElement(driver, BasePageUI.DYNAMIC_TEXTBOX_BY_ID, value, textboxID);
+
+	}
+
+	/**
+	 * Click to button text
+	 * 
+	 * @author HaPTT
+	 * @param driver
+	 * @param textboxID
+	 * @param value
+	 */
+	public void clickToButtonText(WebDriver driver, String buttonText) {
+		waitForElementClick(driver, BasePageUI.DYNAMIC_BUTTON_TEXT, buttonText);
+		clickToElement(driver, BasePageUI.DYNAMIC_BUTTON_TEXT, buttonText);
+
+	}
+
+	/**
+	 * Click to Dropdown by Name
+	 * 
+	 * @param driver
+	 * @param dropdownAttributeName
+	 * @param itemValue
+	 */
+	public void selectToDropdownName(WebDriver driver, String dropdownAttributeName, String itemValue) {
+		waitForElementClick(driver, BasePageUI.DYNAMIC_DROPDOWN_BY_NAME, dropdownAttributeName);
+		selectItemInDefaultDropdown(driver, BasePageUI.DYNAMIC_DROPDOWN_BY_NAME, itemValue, dropdownAttributeName);
+
+	}
+
+	/**
+	 * Click to Radio button by Label
+	 * 
+	 * @param driver
+	 * @param checkboxlabelname
+	 */
+	public void clickToRadioButtonByLabel(WebDriver driver, String radiobuttonlabelname) {
+		waitForElementClick(driver, BasePageUI.DYNAMIC_RADIO_BUTTON_BY_LABEL, radiobuttonlabelname);
+		checkToDefaultCheckboxRadio(driver, BasePageUI.DYNAMIC_RADIO_BUTTON_BY_LABEL, radiobuttonlabelname);
+
+	}
+
+	/**
+	 * Click to Checkbox By Label
+	 * 
+	 * @param driver
+	 * @param checkboxlabelname
+	 */
+	public void clickToCheckboxByLabel(WebDriver driver, String checkboxlabelname) {
+		waitForElementClick(driver, BasePageUI.DYNAMIC_CHECKBOX_BY_LABEL, checkboxlabelname);
+		checkToDefaultCheckboxRadio(driver, BasePageUI.DYNAMIC_CHECKBOX_BY_LABEL, checkboxlabelname);
+
+	}
+
+	/**
+	 * Get value in textbox by textboxID
+	 * 
+	 * @param driver
+	 * @param textboxID
+	 * @return
+	 */
+	public String getTextboxByValueId(WebDriver driver, String textboxID) {
+		waitForElementVisible(driver, BasePageUI.DYNAMIC_TEXTBOX_BY_ID, textboxID);
+		return getElementAttributeValue(driver, BasePageUI.DYNAMIC_TEXTBOX_BY_ID, "value", textboxID);
+
 	}
 
 	// Level_08_switch_Role
