@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite  name="WordPress - Admin">
+
+<Listeners>
+<Listener class-name="commons.MethodListener"> </Listener>
+
+
+</Listeners>
+
+    <parameter name="urlAdmin" value="https://localhost/wp-admin"/>	
+    <parameter name="urlUser" value="https://localhost/"/>
+    
+  <test name="Run on FRIFOX">
+  <parameter name= "browser" value="firefox"></parameter>
+    <classes>
+   <class name="com.wordpress.admin.Post_01_Create_Update_Delete_Search"/>
+   <!--<class name="com.wordpress.user"/> -->
+    </classes>
+  </test> 
+   
+  </suite> <!-- Suite -->
+<!---->

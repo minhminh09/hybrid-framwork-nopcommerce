@@ -80,7 +80,7 @@ public class Level_06_Page_Generator_Manager_1 extends BaseTest {
 	public void TC_02_Login_Invalid_Email() {
 		loginPage = homePage.clickToLoginLink();
 		// 4
-		// loginPage = new LoginPageObject(driver);
+		// loginPage = new Admin_LoginPO(driver);
 		loginPage.inputToEmailTextbox(invalidEmail);
 		// loginPage.inputToPassWordNameTextbox(password);
 		loginPage.clickToLogInButton();
@@ -92,7 +92,7 @@ public class Level_06_Page_Generator_Manager_1 extends BaseTest {
 	public void TC_03_Login_Email_Not_Found() {
 		loginPage = homePage.clickToLoginLink();
 		// 5
-		// loginPage = new LoginPageObject(driver);
+		// loginPage = new Admin_LoginPO(driver);
 
 		loginPage.inputToEmailTextbox(notFoundEmail);
 
@@ -104,7 +104,7 @@ public class Level_06_Page_Generator_Manager_1 extends BaseTest {
 	public void TC_04_Login_Exiting_Email_Empty_Password() {
 		loginPage = homePage.clickToLoginLink();
 		// 6
-		// loginPage = new LoginPageObject(driver);
+		// loginPage = new Admin_LoginPO(driver);
 
 		loginPage.inputToEmailTextbox(emailAddress);
 		loginPage.inputToPassWordNameTextbox("");
@@ -118,7 +118,7 @@ public class Level_06_Page_Generator_Manager_1 extends BaseTest {
 	public void TC_05_Login_Exting_Email_Invalid_Password() {
 		loginPage = homePage.clickToLoginLink();
 		// 7
-		// loginPage = new LoginPageObject(driver);
+		// loginPage = new Admin_LoginPO(driver);
 
 		loginPage.inputToEmailTextbox(emailAddress);
 		loginPage.inputToPassWordNameTextbox("456892");
@@ -131,7 +131,7 @@ public class Level_06_Page_Generator_Manager_1 extends BaseTest {
 	public void TC_06_Login_Cussesfull() {
 		loginPage = homePage.clickToLoginLink();
 		// 8
-		// loginPage = new LoginPageObject(driver);
+		// loginPage = new Admin_LoginPO(driver);
 
 		loginPage.inputToEmailTextbox(emailAddress);
 		loginPage.inputToPassWordNameTextbox(password);

@@ -16,4 +16,9 @@ public class AdminDashboardPageObject extends BasePage {
 	public boolean isDashboardHeaderDisplay() {
 		return isElementDisplayed(driver, Admin_DashboardPageUI.DASHBOARD_HEARDER);
 	}
+
+	public void clicktoPostMenuLink() {
+		// TODO Auto-generated method stub
+
+	}
 }

@@ -23,7 +23,7 @@ import commons.PageGeneratorManager;
 
 public class Level_08_Switch_Role extends BaseTest {
 
-	// private DashboardPageObject dashboardPage;
+	// private Admin_DashboardPO dashboardPage;
 	@Parameters("browser")
 	@BeforeClass
 	public void beforeClass(String browserName) {

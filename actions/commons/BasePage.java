@@ -48,7 +48,7 @@ public class BasePage<JavascriptExcutor> {
 		return driver.getTitle();
 	}
 
-	public String getCurrentURL(WebDriver driver) {
+	public String getPageURL(WebDriver driver) {
 		return driver.getCurrentUrl();
 
 	}
