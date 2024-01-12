@@ -1,10 +1,10 @@
-package PageObject_Wordpress_Admin;
+package PageObject_Wordpress;
 
 import org.openqa.selenium.WebDriver;
 
 import commons.BasePage;
 import commons.PageGeneratorManager;
-import pageUI_wordpress_admin.Admin_login_UI;
+import pageUI_Wordpress.Admin_login_UI;
 
 public class Admin_LoginPO extends BasePage {
 	WebDriver driver;
@@ -28,7 +28,7 @@ public class Admin_LoginPO extends BasePage {
 	public Admin_DashboardPO clicktoButtonLogin() {
 		waitForElementVisible(driver, Admin_login_UI.LOGIN_BUTTON);
 		clickToElement(driver, Admin_login_UI.LOGIN_BUTTON);
-		return PageObject_Wordpress_Admin.PageGeneratorManager.w_getAdminDashboardPage(driver);
+		return PageObject_Wordpress.PageGeneratorManager.w_getAdminDashboardPage(driver);
 
 	}
 

@@ -1,10 +1,10 @@
-package PageObject_Wordpress_Admin;
+package PageObject_Wordpress;
 
 import org.openqa.selenium.WebDriver;
 
 import commons.BasePage;
 import commons.PageGeneratorManager;
-import pageUI_wordpress_admin.Admin_Dashboard_UI;
+import pageUI_Wordpress.Admin_Dashboard_UI;
 
 public class Admin_DashboardPO extends BasePage {
 	WebDriver driver;
@@ -17,7 +17,7 @@ public class Admin_DashboardPO extends BasePage {
 
 		waitForElementClick(driver, Admin_Dashboard_UI.POST_MENU_LINK);
 		clickToElement(driver, Admin_Dashboard_UI.POST_MENU_LINK);
-		return PageObject_Wordpress_Admin.PageGeneratorManager.w_getAdminPostSearchPage(driver);
+		return PageObject_Wordpress.PageGeneratorManager.w_getAdminPostSearchPage(driver);
 
 	}
 }

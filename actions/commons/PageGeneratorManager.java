@@ -11,10 +11,10 @@ import PageObject_NopCommerce_User.User_RegisterPageObject;
 import PageObject_NopCommerce_User.User_RewardPointsPageObject;
 import PageObject_Nopcommerce_Admin.AdminDashboardPageObject;
 import PageObject_Nopcommerce_Admin.AdminLoginPageObject;
-import PageObject_Wordpress_Admin.Admin_DashboardPO;
-import PageObject_Wordpress_Admin.Admin_LoginPO;
-import PageObject_Wordpress_Admin.Admin_PostAddNewPO;
-import PageObject_Wordpress_Admin.Admin_PostSearchPO;
+import PageObject_Wordpress.Admin_DashboardPO;
+import PageObject_Wordpress.Admin_LoginPO;
+import PageObject_Wordpress.Admin_PostAddNewPO;
+import PageObject_Wordpress.Admin_PostSearchPO;
 
 public class PageGeneratorManager {
 	public static User_HomePageObject getUserHomePage(WebDriver driver) {

@@ -9,10 +9,12 @@ import org.testng.annotations.Listeners;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
-import PageObject_Wordpress_Admin.Admin_DashboardPO;
-import PageObject_Wordpress_Admin.Admin_LoginPO;
-import PageObject_Wordpress_Admin.Admin_PostAddNewPO;
-import PageObject_Wordpress_Admin.Admin_PostSearchPO;
+import PageObject_Wordpress.Admin_DashboardPO;
+import PageObject_Wordpress.Admin_LoginPO;
+import PageObject_Wordpress.Admin_PostAddNewPO;
+import PageObject_Wordpress.Admin_PostSearchPO;
+import PageObject_Wordpress.User_HomePO;
+import PageObject_Wordpress.User_PostDetailPO;
 import commons.BaseTest;
 import commons.PageGeneratorManager;
 
@@ -22,16 +24,20 @@ public class Post_01_Create_Update_Delete_Search extends BaseTest {
 	String adminPassword = "automationfc";
 	String searchPostUrl;
 	int randomNumber = generateFakeNumber();
-	String postTilevalue = "Live coding title" + randomNumber;
-	String postBodyvalue = "Live coding body" + randomNumber;
+	String postTitle = "Live coding title" + randomNumber;
+	String postBody = "Live coding body" + randomNumber;
 	String authorName = "automationfc";
+	String adminUrl, endUserUrl;
+	String currentDay = getCurrentDay();
 
-	@Parameters({ "browser", "urlAdmin" })
+	@Parameters({ "browser", "urlAdmin", "urlUser" })
 	@BeforeClass
-	public void beforeClass(String browserName, String urlAdmin) {
-		log.info("Preconditon - Step 01 : Open browser and admin url");
-		driver = getBrowserDriver(browserName, urlAdmin);
-		adminLoginPage = PageObject_Wordpress_Admin.PageGeneratorManager.w_getAdminLoginPage(driver);
+	public void beforeClass(String browserName, String urlAdmin, String endUserUrl) {
+		log.info("Preconditon - Step 01 : Open browser and Admin site");
+		this.adminUrl = urlAdmin;
+		this.endUserUrl = endUserUrl;
+		driver = getBrowserDriver(browserName, this.adminUrl);
+		adminLoginPage = PageObject_Wordpress.PageGeneratorManager.w_getAdminLoginPage(driver);
 
 		log.info("Preconditon - Step 02 : Enter to username textbox with value: " + adminUsername);
 		adminLoginPage.enterToUsernameTextbox(adminUsername);
@@ -56,10 +62,10 @@ public class Post_01_Create_Update_Delete_Search extends BaseTest {
 		adminPostAddNewPage = adminPostSearchPage.clicktoAddNewPostButton();
 
 		log.info("Create_Post - Step 04 : Enter to post title");
-		adminPostAddNewPage.enterToAddNewPostTitle(postTilevalue);
+		adminPostAddNewPage.enterToAddNewPostTitle(postTitle);
 
 		log.info("Create_Post - Step 05 : Enter to body");
-		adminPostAddNewPage.enterToAddBodyPostTitle(postBodyvalue);
+		adminPostAddNewPage.enterToAddBodyPostTitle(postBody);
 
 		log.info("Create_Post - Step 06 : Click to 'Publish' button");
 		adminPostAddNewPage.clickToPublistButton();
@@ -77,13 +83,34 @@ public class Post_01_Create_Update_Delete_Search extends BaseTest {
 		adminPostSearchPage = adminPostAddNewPage.searchPostPageUrl(searchPostUrl);
 
 		log.info("Search_Post - Step 02 : Enter to search textbox");
+		adminPostSearchPage.enterToSearchTextbox(postTitle);
 
 		log.info("Search_Post - Step 03 : Click to 'Search Post' button");
+		adminPostSearchPage.clickToSearchPostButton();
 
-		log.info("Search_Post - Step 04 : Verify Search table  contains' " + postTilevalue + "'");
+		log.info("Search_Post - Step 04 : Verify Search table  contains' " + postTitle + "'");
+		adminPostSearchPage.isPostSearchTableisDisplay("title", postTitle);
 
 		log.info("Search_Post - Step 05 : Verify Search table  contains' " + authorName + "'");
+		adminPostSearchPage.isPostSearchTableisDisplay("author", authorName);
 
+		log.info("Search_Post - Step 06 : Open End User site");
+		userHomePO = adminPostSearchPage.openEndUserSite(driver, this.endUserUrl);
+
+		log.info("Search_Post - Step 07 : Verify Post infor display at Home page");
+		verifyTrue(userHomePO.isPostInforDisplayed_POST_TITLE(postTitle));
+		verifyTrue(userHomePO.isPostInforDisplayed_POST_BODY(postTitle, postBody));
+		verifyTrue(userHomePO.isPostInforDisplayed_POST_AUTHOR(postTitle, authorName));
+		verifyTrue(userHomePO.isPostInforDisplayed_POST_CURRENT_DAY(postTitle, currentDay));
+
+		log.info("Search_Post - Step 08 : Click to post title");
+		userPostDetailPO = userHomePO.clickToPostTitle(postTitle);
+
+		log.info("Search_Post - Step 09 : Verify Post infor display at Post detail page");
+		verifyTrue(userPostDetailPO.isPostInforDisplayed_POST_TITLE(postTitle));
+		verifyTrue(userPostDetailPO.isPostInforDisplayed_POST_BODY(postTitle, postBody));
+		verifyTrue(userPostDetailPO.isPostInforDisplayed_POST_AUTHOR(postTitle, authorName));
+		verifyTrue(userPostDetailPO.iisPostInforDisplayed_POST_CURRENT_DAY(postTitle, currentDay));
 	}
 
 	@Test
@@ -112,4 +139,6 @@ public class Post_01_Create_Update_Delete_Search extends BaseTest {
 	Admin_DashboardPO adminDashboardPage;
 	Admin_PostSearchPO adminPostSearchPage;
 	Admin_PostAddNewPO adminPostAddNewPage;
+	User_HomePO userHomePO;
+	User_PostDetailPO userPostDetailPO;
 }

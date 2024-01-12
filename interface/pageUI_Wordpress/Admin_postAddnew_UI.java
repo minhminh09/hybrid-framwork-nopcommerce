@@ -1,4 +1,4 @@
-package pageUI_wordpress_admin;
+package pageUI_Wordpress;
 
 public class Admin_postAddnew_UI {
 	public static final String ADD_TITLE_TEXTBOX = "css=h1.wp-block-post-title";

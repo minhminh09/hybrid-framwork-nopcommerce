@@ -25,6 +25,7 @@ import PageObject_NopCommerce_User.User_MyProductReviewsPageObject;
 import PageObject_NopCommerce_User.User_RegisterPageObject;
 import PageObject_NopCommerce_User.User_RewardPointsPageObject;
 import PageObject_Nopcommerce_Admin.AdminLoginPageObject;
+import PageObject_Wordpress.User_HomePO;
 import pageUI_jquery_UploadFile.BasePageJqueryUI;
 import pageUIs_NopCommerce_User.BasePageUI;
 
@@ -684,6 +685,11 @@ public class BasePage<JavascriptExcutor> {
 		waitForElementVisible(driver, BasePageUI.LOGOUT_LINK_ADMIN);
 		clickToElement(driver, BasePageUI.LOGOUT_LINK_ADMIN);
 		return PageGeneratorManager.getAdminLoginPage(driver);
+	}
+
+	public User_HomePO openEndUserSite(WebDriver driver, String endUserUrl) {
+		openPageURL(driver, endUserUrl);
+		return PageObject_Wordpress.PageGeneratorManager.w_getUserHomePage(driver);
 	}
 
 	private long longTimeOut = GlobalConstants.LONG_TIMEOUT;

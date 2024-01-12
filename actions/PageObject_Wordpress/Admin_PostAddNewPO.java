@@ -1,9 +1,9 @@
-package PageObject_Wordpress_Admin;
+package PageObject_Wordpress;
 
 import org.openqa.selenium.WebDriver;
 
 import commons.BasePage;
-import pageUI_wordpress_admin.Admin_postAddnew_UI;
+import pageUI_Wordpress.Admin_postAddnew_UI;
 
 public class Admin_PostAddNewPO extends BasePage {
 	WebDriver driver;
