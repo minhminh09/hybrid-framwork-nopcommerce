@@ -39,4 +39,38 @@ public class Admin_PostSearchPO extends BasePage {
 
 	}
 
+	public Admin_PostAddNewPO clickToPostTitleLink(String postTitle) {
+		waitForElementClick(driver, Admin_postSearch_UI.TABLE_ROW_TITLE_DETAIL, postTitle);
+		clickToElement(driver, Admin_postSearch_UI.TABLE_ROW_TITLE_DETAIL, postTitle);
+		return PageObject_Wordpress.PageGeneratorManager.w_getAdminPostAddNewPage(driver);
+	}
+
+	public void selectPostCheckboxByTitle(String editpostTitle) {
+		waitForElementClick(driver, Admin_postSearch_UI.ROW_CHECKBOX_BY_POST_TITLE, editpostTitle);
+		checkToDefaultCheckboxRadio(driver, Admin_postSearch_UI.ROW_CHECKBOX_BY_POST_TITLE, editpostTitle);
+
+	}
+
+	public void selectValueTextItemActionDropdown(String dropdownItem) {
+		waitForElementClick(driver, Admin_postSearch_UI.ACTION_DROPDOWN, dropdownItem);
+		selectItemInDefaultDropdown(driver, Admin_postSearch_UI.ACTION_DROPDOWN, dropdownItem);
+
+	}
+
+	public void clickToAppLyButton() {
+		waitForElementClick(driver, Admin_postSearch_UI.APPLY_DROPDOWN);
+		clickToElement(driver, Admin_postSearch_UI.APPLY_DROPDOWN);
+
+	}
+
+	public boolean isMoveToTrashMessageIsDisplayed(String message) {
+		waitForAllElementVisible(driver, Admin_postSearch_UI.MOVE_TO_TRASH_MESSAGE, message);
+		return isElementDisplayed(driver, Admin_postSearch_UI.MOVE_TO_TRASH_MESSAGE, message);
+	}
+
+	public boolean isNoPostFoundMessageIsDisplayed(String message) {
+		waitForAllElementVisible(driver, Admin_postSearch_UI.NOTHING_NOT_FOUND_MESSAGE, message);
+		return isElementDisplayed(driver, Admin_postSearch_UI.NOTHING_NOT_FOUND_MESSAGE, message);
+	}
+
 }

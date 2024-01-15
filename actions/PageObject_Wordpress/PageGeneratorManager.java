@@ -46,4 +46,8 @@ public class PageGeneratorManager {
 		return new User_PostDetailPO(driver);
 	}
 
+	public static UserSearchPostPO w_getUserSearchPage(WebDriver driver) {
+		return new UserSearchPostPO(driver);
+	}
+
 }

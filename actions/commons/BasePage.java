@@ -25,6 +25,7 @@ import PageObject_NopCommerce_User.User_MyProductReviewsPageObject;
 import PageObject_NopCommerce_User.User_RegisterPageObject;
 import PageObject_NopCommerce_User.User_RewardPointsPageObject;
 import PageObject_Nopcommerce_Admin.AdminLoginPageObject;
+import PageObject_Wordpress.Admin_DashboardPO;
 import PageObject_Wordpress.User_HomePO;
 import pageUI_jquery_UploadFile.BasePageJqueryUI;
 import pageUIs_NopCommerce_User.BasePageUI;
@@ -202,6 +203,11 @@ public class BasePage<JavascriptExcutor> {
 		element.sendKeys(textvalue);
 	}
 
+	public void clearValueInElementByDeleteKey(WebDriver driver, String locatorType) {
+		WebElement element = this.getWebElement(driver, locatorType);
+		element.sendKeys(Keys.chord(Keys.CONTROL, "a", Keys.DELETE));
+	}
+
 	public String getElementText(WebDriver driver, String locatorType) {
 		return getWebElement(driver, locatorType).getText();
 	}
@@ -321,10 +327,10 @@ public class BasePage<JavascriptExcutor> {
 		return getWebElement(driver, getDynamicXpath(locatorType, dynamicValues)).isDisplayed();
 	}
 
-	public boolean isElementUndisplayed(WebDriver driver, String locator) {
+	public boolean isElementUndisplayed(WebDriver driver, String locatorType) {
 		// System.out.println("Start time: " + new Date().toString());
 		overrideImplicitTimeout(driver, shortTimeOut);
-		List<WebElement> elements = getListWebElement(driver, locator);
+		List<WebElement> elements = getListWebElement(driver, locatorType);
 		// Neu nhu gan=5 apply cho tat ca cac step ve sau do: findElement/findElements
 		overrideImplicitTimeout(driver, longTimeOut);
 		if (elements.size() == 0) {
@@ -337,6 +343,21 @@ public class BasePage<JavascriptExcutor> {
 			return true;
 		} else {
 			// System.out.println("Element in DOM and visible");
+			return false;
+		}
+	}
+
+	public boolean isElementUndisplayed(WebDriver driver, String locatorType, String... dynamicValues) {
+		overrideImplicitTimeout(driver, shortTimeOut);
+		List<WebElement> elements = getListWebElement(driver, getDynamicXpath(locatorType, dynamicValues));
+		overrideImplicitTimeout(driver, longTimeOut);
+		if (elements.size() == 0) {
+			return true;
+		} else if (elements.size() > 0 && !elements.get(0).isDisplayed()) {
+
+			return true;
+		} else {
+
 			return false;
 		}
 	}
@@ -495,6 +516,11 @@ public class BasePage<JavascriptExcutor> {
 		WebDriverWait explicitWait = new WebDriverWait(driver, longTimeOut);
 		explicitWait.until(ExpectedConditions.invisibilityOfElementLocated(getByLocator(locatorType)));
 	}
+
+	// public void waitForElementInvisible(WebDriver driver, String locatorType, String... dynamicValues) {
+	// WebDriverWait explicitWait = new WebDriverWait(driver, longTimeOut);
+	// explicitWait.until(ExpectedConditions.invisibilityOfElementLocated(getByLocator(getDynamicXpath(locatorType, dynamicValues))));
+	// }
 
 	/*
 	 * wait for Element undisplay in DOM or not in DOM and override implicit timeout
@@ -690,6 +716,11 @@ public class BasePage<JavascriptExcutor> {
 	public User_HomePO openEndUserSite(WebDriver driver, String endUserUrl) {
 		openPageURL(driver, endUserUrl);
 		return PageObject_Wordpress.PageGeneratorManager.w_getUserHomePage(driver);
+	}
+
+	public Admin_DashboardPO openAdminSite(WebDriver driver, String adminUrl) {
+		openPageURL(driver, adminUrl);
+		return PageObject_Wordpress.PageGeneratorManager.w_getAdminDashboardPage(driver);
 	}
 
 	private long longTimeOut = GlobalConstants.LONG_TIMEOUT;
