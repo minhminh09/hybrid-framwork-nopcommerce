@@ -184,11 +184,23 @@ public class BasePage<JavascriptExcutor> {
 	}
 
 	public void clickToElement(WebDriver driver, String locatorType) {
-		getWebElement(driver, locatorType).click();
+		if (driver.toString().contains("internet explorer")) {
+			clickToElementByJS(driver, locatorType);
+			sleepInsecon(3);
+		} else {
+			this.getWebElement(driver, locatorType).click();
+		}
+
 	}
 
 	public void clickToElement(WebDriver driver, String locatorType, String... dynamicValues) {
-		getWebElement(driver, getDynamicXpath(locatorType, dynamicValues)).click();
+		if (driver.toString().contains("internet explorer")) {
+			clickToElementByJS(driver, locatorType);
+			sleepInsecon(3);
+		} else {
+			this.getWebElement(driver, getDynamicXpath(locatorType, dynamicValues)).click();
+		}
+
 	}
 
 	public void senkeyToElement(WebDriver driver, String locatorType, String textvalue) {

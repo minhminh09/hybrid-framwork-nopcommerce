@@ -1,6 +1,9 @@
 package commons;
 
 import java.io.IOException;
+import java.lang.StackWalker.Option;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
@@ -83,6 +86,7 @@ public class BaseTest<BrowserList> {
 		System.out.println("Run on" + browserName);
 		if (browserName.equals("firefox")) {
 			driver = WebDriverManager.firefoxdriver().create();
+
 			// driver = new FirefoxDriver();
 		} else if (browserName.equals("h_firefox")) {
 			WebDriverManager.firefoxdriver().setup();
@@ -92,7 +96,12 @@ public class BaseTest<BrowserList> {
 			driver = new FirefoxDriver(options);
 		} else if (browserName.equals("chrome")) {
 			driver = WebDriverManager.chromedriver().create();
-			driver = new ChromeDriver();
+			// set browser language= Vietnamess
+			ChromeOptions options = new ChromeOptions();
+			//
+			options.addArguments("--disable-notifications");
+			options.addArguments("--lang=vi");
+			driver = new ChromeDriver(options);
 		} else if (browserName.equals("h_firefox")) {
 			WebDriverManager.chromedriver().setup();
 			ChromeOptions options = new ChromeOptions();
@@ -135,7 +144,13 @@ public class BaseTest<BrowserList> {
 		System.out.println("Run on" + browserName);
 		if (browserName.equals("firefox")) {
 			driver = WebDriverManager.firefoxdriver().create();
-			driver = new FirefoxDriver();
+			FirefoxOptions options = new FirefoxOptions();
+			options.addArguments("--disable-notifications");
+			options.addArguments("--disable-geolocation");
+
+			options.addPreference("intl.accept_langueges", "vi-vn, vi, en-us, en");
+
+			driver = new FirefoxDriver(options);
 		} else if (browserName.equals("h_firefox")) {
 			WebDriverManager.firefoxdriver().setup();
 			FirefoxOptions options = new FirefoxOptions();
@@ -144,7 +159,15 @@ public class BaseTest<BrowserList> {
 			driver = new FirefoxDriver(options);
 		} else if (browserName.equals("chrome")) {
 			driver = WebDriverManager.chromedriver().create();
-			driver = new ChromeDriver();
+			// set browser language= Vietnamess
+			ChromeOptions options = new ChromeOptions();
+			//
+			options.addArguments("--disable-notifications");
+			options.addArguments("--disable-geolocation");
+			options.setExperimentalOption("useAutomationExtention", false);
+			options.setExperimentalOption("excludeSwitches", Collections.singleton("enable-automation"));
+			options.addArguments("--lang=vi");
+			driver = new ChromeDriver(options);
 		} else if (browserName.equals("h_firefox")) {
 			WebDriverManager.chromedriver().setup();
 			ChromeOptions options = new ChromeOptions();
