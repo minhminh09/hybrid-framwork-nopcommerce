@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite  name="SaurceLad-Sort" parallel="false" thread-count="3">
+
+<Listeners>
+<Listener class-name="commons.MethodListener"> </Listener>
+
+
+</Listeners>
+    <parameter name="appUrl" value="https://www.saucedemo.com/"/>	
+  <test name="Run on CHROME">
+  <parameter name= "browser" value="chrome"></parameter>
+    <classes>
+   
+      <class name="com.saurcelad.sort.Level_17_Sort_Acc_Desc"/>
+    </classes>
+  </test> 
+   
+  </suite> <!-- Suite -->
+<!---->

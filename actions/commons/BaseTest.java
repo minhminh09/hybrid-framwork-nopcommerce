@@ -162,12 +162,13 @@ public class BaseTest<BrowserList> {
 			// set browser language= Vietnamess
 			ChromeOptions options = new ChromeOptions();
 			//
-			options.addArguments("--disable-notifications");
-			options.addArguments("--disable-geolocation");
-			options.setExperimentalOption("useAutomationExtention", false);
-			options.setExperimentalOption("excludeSwitches", Collections.singleton("enable-automation"));
-			options.addArguments("--lang=vi");
+			// options.addArguments("--disable-notifications");
+			// options.addArguments("--disable-geolocation");
+			// options.setExperimentalOption("useAutomationExtention", false);
+			// options.setExperimentalOption("excludeSwitches", Collections.singleton("enable-automation"));
+			// options.addArguments("--lang=vi");
 			driver = new ChromeDriver(options);
+
 		} else if (browserName.equals("h_firefox")) {
 			WebDriverManager.chromedriver().setup();
 			ChromeOptions options = new ChromeOptions();
