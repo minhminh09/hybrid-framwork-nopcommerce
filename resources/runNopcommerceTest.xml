@@ -11,7 +11,7 @@
   <parameter name= "browser" value="firefox"></parameter>
     <classes>
    
-      <class name="com.nopcommerce.user.Level_16_Pattern_Object"/>
+      <class name="com.nopcommerce.user.Level_19_Faker_Data"/>
     </classes>
   </test> 
    
